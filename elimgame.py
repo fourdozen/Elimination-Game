@@ -17,6 +17,7 @@ class Critter:
             out.append(get_cell_num(self.x_pos - 1, self.y_pos, N))
         if self.x_pos + 1 <= (N - 1):
             out.append(get_cell_num(self.x_pos + 1, self.y_pos, N))
+
         if self.y_pos >= 1:
             out.append(get_cell_num(self.x_pos, self.y_pos - 1, N))
         if self.y_pos + 1 <= (N - 1):
@@ -25,14 +26,15 @@ class Critter:
         return out
 
 
-def create_board(n, c_pos_list):
+def create_board(n, critter_pos_list):
     board = []
 
     for i in range(n ** 2):
-        x = i in c_pos_list
+        x = i in critter_pos_list
         board.append(Critter(i, x))
 
     return board
+
 
 def print_board(board, n):
     c_state_dict = {True: "up",
@@ -71,5 +73,3 @@ def print_empty_board(n):
         print(f"{i:4d}", end=" ")
         if i % n == (n - 1):
             print(" ")
-
-
