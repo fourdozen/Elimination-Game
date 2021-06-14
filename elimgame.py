@@ -52,10 +52,10 @@ def get_cell_num(x, y, n):
 
 
 def is_solved(board):
-    if True in [i.is_up() for i in board]:
-        return False
-    else:
-        return True
+    for i in board:
+        if i.is_up:
+            return False
+    return True
 
 
 def critter_is_hit(board, cell_to_flip):
