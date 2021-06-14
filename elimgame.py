@@ -52,7 +52,7 @@ def get_cell_num(x, y, n):
 
 
 def is_solved(board):
-    if True is in [i.is_up() for i in board]:
+    if True in [i.is_up() for i in board]:
         return False
     else:
         return True
