@@ -4,8 +4,8 @@ N = int(input("N:\n"))
 game.N = N
 
 game.print_empty_board(N)
-critter_pos_list = list(map(int, input("Positions of critters (comma separated):\n").split(',')))
-b = game.create_board(N, critter_pos)
+critter_pos_list = tuple(map(int, input("Positions of critters (comma separated):\n").split(',')))
+b = game.create_board(N, critter_pos_list)
 game.print_board(b, N)
 
 while not game.is_solved(b):

@@ -23,7 +23,7 @@ class Critter:
         if self.y_pos + 1 <= (N - 1):
             out.append(get_cell_num(self.x_pos, self.y_pos + 1, N))
 
-        return out
+        return tuple(out)
 
 
 def create_board(n, critter_pos_list):
